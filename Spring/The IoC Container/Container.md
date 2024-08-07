@@ -8,7 +8,7 @@
 ## Types of Spring Containers
 1. **BeanFactory**: 가장 기본적인 컨테이너로, 객체의 생성과 의존성 주입을 담당한다. 초기화 비용이 적고, 지연 로딩(lazy loading)을 지원한다.
 2. **ApplicationContext**: BeanFactory를 확장한 컨테이너로, 더 많은 기능을 제공한다. 메시지 소스 처리, 이벤트 발행, 애플리케이션 레벨 설정 등을 지원한다. 주요 구현체로는 ClassPathXmlApplicationContext, FileSystemXmlApplicationContext, AnnotationConfigApplicationContext 등이 있다.
-## Spring Container Life Cycle
+## Spring Container Lifecycle
 스프링 컨테이너는 애플리케이션의 시작부터 종료까지 다양한 단계에서 생명 주기 **콜백**을 제공한다. 대표적인 생명 주기 콜백 메서드로는 InitializingBean의 afterPropertiesSet과 DisposableBean의 destroy가 있으며, @PostConstruct와 @PreDestroy 어노테이션을 통해 콜백을 정의할 수 있다.
 ## Configuration Metadata
 Spring Configuration Metadata는 스프링 애플리케이션의 객체 설정과 구성 정보를 정의하는 방법을 의미한다. 이는 **XML 파일**, **자바 어노테이션**, 또는 **자바 설정 클래스**를 통해 이루어진다. 각각의 방법은 애플리케이션의 다양한 구성 요소와 의존성을 선언하고 설정하는 데 사용된다. 
