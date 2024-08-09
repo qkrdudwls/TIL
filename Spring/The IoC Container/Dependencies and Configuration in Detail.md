@@ -14,7 +14,7 @@
 </bean>
 ```
 
-위의 예시에서는 `myDataSource`라는 빈을 정의하고, MySQL 데이터베이스와의 연결을 위한 드라이버 클래스 이름, URL, 사용자 이름, 비밀번호 등의 속성을 설정한다. XML 구성 파일에서 이러한 설정은 문자열로 지정되며, 스프링이 자동으로 이를 적절한 타입으로 변환해 준다. 
+위의 예시에서는 `myDataSource`라는 빈을 정의하고, MySQL 데이터베이스와의 연결을 위한 드라이버 클래스 이름, URL, 사용자 이름, 비밀번호 등의 속성을 설정한다. XML 구성 파일에서 이러한 설정은 **문자열로 지정**되며, 스프링이 자동으로 이를 적절한 타입으로 변환해 준다. 
 
 `p-namespace`를 사용하면 XML에서 빈 속성을 더 간단하게 정의할 수 있다. 이를 통해 `<property/>` 요소를 사용하지 않고도 속성을 직접 지정할 수 있다.
 
@@ -38,7 +38,7 @@
 
 ### The idref element
 
-`idref` 요소는 다른 빈의 ID(문자열 값)를 안전하게 전달하는 방법이다. 이는 `<constructor-arg/>` 또는 `<property/>` 요소에서 사용된다. 
+`idref` 요소는 **다른 빈의 ID(문자열 값)를 안전하게 전달**하는 방법이다. 이는 `<constructor-arg/>` 또는 `<property/>` 요소에서 사용된다. 
 
 ```xml
 <bean id="theTargetBean" class="..."/>
@@ -54,7 +54,7 @@
 
 ## References to Other Beans
 
-`ref` 요소는 `<constructor-arg/>` 또는 `<property/>` 요소 내에서 다른 빈에 대한 참조를 설정하는 데 사용된다. 이를 통해 한 빈의 속성 값을 컨테이너에서 관리되는 다른 빈(collaborators)으로 설정할 수 있다.
+`ref` 요소는 `<constructor-arg/>` 또는 `<property/>` 요소 내에서 **다른 빈에 대한 참조를 설정**하는 데 사용된다. 이를 통해 한 빈의 속성 값을 컨테이너에서 관리되는 다른 빈(collaborators)으로 설정할 수 있다.
 
 ```xml
 <ref bean="someBean"/>
@@ -64,7 +64,7 @@
 
 ## Inner Beans
 
-내부 빈은 `<property/>` 또는 `<constructor-arg/>` 요소 내에 정의된 `<bean/>` 요소이다. 내부 빈은 외부 빈 내에서만 사용되며, 독립적으로 접근하거나 다른 협력자에게 주입할 수 없다.
+내부 빈은 `<property/>` 또는 `<constructor-arg/>` 요소 내에 정의된 `<bean/>` 요소이다. **내부 빈은 외부 빈 내에서만 사용되며, 독립적으로 접근하거나 다른 협력자에게 주입할 수 없다**.
 
 ```xml
 <bean id="outer" class="...">
@@ -131,7 +131,7 @@
 
 ### Collection Merging
 
-스프링 프레임워크에서 제공하는 컬렉션 병합 기능은 부모 빈과 자식 빈 간의 컬렉션 타입 속성을 병합해주는 기능이다.  이를 통해 부모 빈에 정의된 `<list/>`, `<map/>`, `<set/>`, 또는 `<props/>` 같은 컬렉션 요소들을 자식 빈에서 상속받아 활용할 수 있으며, 자식 빈에서 부모의 컬렉션 요소들을 병합하거나 재정의할 수 있고, 자식 컬렉션에서 `merge="true"` 속성을 사용하여 명시적으로 병합을 지정할 수 있다.
+스프링 프레임워크에서 제공하는 컬렉션 병합 기능은 **부모 빈과 자식 빈 간의 컬렉션 타입 속성을 병합**해주는 기능이다.  이를 통해 부모 빈에 정의된 `<list/>`, `<map/>`, `<set/>`, 또는 `<props/>` 같은 컬렉션 요소들을 자식 빈에서 상속받아 활용할 수 있으며, 자식 빈에서 부모의 컬렉션 요소들을 병합하거나 재정의할 수 있고, 자식 컬렉션에서 `merge="true"` 속성을 사용하여 명시적으로 병합을 지정할 수 있다.
 
 ```xml
 <beans>
@@ -182,7 +182,7 @@ support=support@example.co.uk
 
 ### Strongly-typed Collection
 
-Java에서는 generic 타입을 지원하기 때문에 강한 타입 컬렉션을 사용할 수 있다. 이는 특정 타입의 요소만 포함될 수 있는 컬렉션을 선언할 수 있음을 의미한다. 스프링에서는 이러한 강한 타입 컬렉션을 빈에 주입할 때 타입 변환을 지원한다. 
+Java에서는 **generic 타입을 지원**하기 때문에 강한 타입 컬렉션을 사용할 수 있다. 이는 특정 타입의 요소만 포함될 수 있는 컬렉션을 선언할 수 있음을 의미한다. 스프링에서는 이러한 **강한 타입 컬렉션을 빈에 주입할 때 타입 변환을 지원**한다. 
 
 아래는 `Map<String, Float>` 타입의 강한 타입 컬렉션을 사용한 예제이다.
 
@@ -235,7 +235,7 @@ public class SomeClass {
 
 ## XML Shortcut with the p-namespace
 
-**p-namespace**를 사용하면 `<property>` 요소를 사용하지 않고 빈의 속성을 설정할 수 있다. 이 방식은 XML 문서의 가독성을 높이고 코드를 간소화하는 데 유용하다.
+**p-namespace**를 사용하면 **`<property>` 요소를 사용하지 않고 빈의 속성을 설정**할 수 있다. 이 방식은 XML 문서의 가독성을 높이고 코드를 간소화하는 데 유용하다.
 
 아래는 표준 XML 형식을 사용한 빈 설정 예시이다.
 
@@ -274,7 +274,7 @@ p-namespace는 편리하지만, 모든 경우에 사용할 수 있는 것은 아
 
 ## XML Shortcut with the c-namespace
 
-**c-namespace**는 Spring 3.1에서 도입된 기능으로, 생성자 인자를 설정할 때 `<constructor-arg>` 요소를 사용하지 않고 속성으로 직접 설정할 수 있다. 이는 생성자 기반 의존성 주입을 단순화하는 방법이다.
+**c-namespace**는 Spring 3.1에서 도입된 기능으로, **생성자 인자를 설정할 때 `<constructor-arg>` 요소를 사용하지 않고 속성으로 직접 설정**할 수 있다. 이는 생성자 기반 의존성 주입을 단순화하는 방법이다.
 
 다음은 생성자 인자를 설정하는 표준 방식이다.
 
@@ -293,9 +293,9 @@ p-namespace는 편리하지만, 모든 경우에 사용할 수 있는 것은 아
     c:thingThree-ref="beanThree" c:email="something@somewhere.com"/>
 ```
 
-### **인덱스 기반 설정 (Index-based Configuration)**
+### **Index-based Configuration**
 
-드물게 생성자 인자의 이름을 사용할 수 없을 때 인덱스를 사용할 수 있다. 이 경우는 다음과 같다.
+드물게 생성자 인자의 이름을 사용할 수 없을 때 **인덱스**를 사용할 수 있다. 이 경우는 다음과 같다.
 
 ```xml
 <bean id="beanOne" class="x.y.ThingOne" c:_0-ref="beanTwo" c:_1-ref="beanThree"
@@ -306,7 +306,7 @@ p-namespace는 편리하지만, 모든 경우에 사용할 수 있는 것은 아
 
 ## Compound Property  Name
 
-Spring XML에서는 복합 또는 중첩된 속성 이름을 사용할 수 있다. 이는 빈의 특정 속성에 접근하여 값을 설정할 때 유용하다.
+Spring XML에서는 **복합 또는 중첩된 속성 이름**을 사용할 수 있다. 이는 빈의 특정 속성에 접근하여 값을 설정할 때 유용하다.
 
 ```xml
 <bean id="something" class="things.ThingOne">
