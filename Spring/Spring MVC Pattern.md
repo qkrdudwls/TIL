@@ -93,6 +93,25 @@ public class UserController {
     }
 }
 ```
+### `@Controller`
+
+`@Controller` 는 스프링 MVC에서 주로 사용되는 어노테이션으로, 웹 요청을 처리하는 컨트롤러 클래스를 나타낸다. 이 어노테이션을 사용하면 스프링이 해당 클래스를 컨트롤러로 인식하고, HTTP 요청을 처리할 수 있다.
+
+#### 주요 특징
+
+- **뷰 리졸버(View Resolver)**: `@Controller`는 주로 뷰 이름을 반환하는데 사용된다. 메서드가 문자열을 반환하면, 스프링은 이 문자열을 뷰 이름으로 해석하고, 해당 뷰를 찾아 렌더링한다.
+- **모델**: 뷰에 데이터를 전달하기 위해 `Model` 또는 `ModelAndView` 객체를 사용할 수 있다. 이 데이터는 뷰에서 사용된다.
+- **전형적인 MVC 패턴**: `@Controller`는 전통적인 스프링 MVC 패턴에서 사용되며, 주로 서버 측에서 HTML을 렌더링하여 클라이언트에게 반환하는 방식으로 사용된다.
+
+### `@RestController`
+
+`@RestController`는 `@Controller`와 `@ResponseBody`를 결합한 어노테이션올, 주로 RESTful 웹 서비스를 개발할 때 사용된다. 이 어노테이션을 사용하면, 스프링이 메서드에서 반환하는 객체를 JSON이나 XML 형태로 변환하여 HTTP 응답 본문에 직접 작성한다.
+
+#### 주요 특징
+
+- **자동으로 JSON/XML 변환**: 메서드에서 반환된 데이터는 `HttpMessageConverter`에 의해 JSON 또는 XML 등의 포맷으로 자동 변환된다.
+- **뷰가 필요 없음**: `@RestController`는 주로 데이터 자체를 반환하므로, 별도의 뷰 리졸버가 필요하지 않는다.
+- **RESTful 웹 서비스**: 주로 RESTful API를 개발할 때 사용되며, 클라이언트는 서버로부터 HTML이 아닌 JSON/XML 등의 데이터 포맷을 응답받는다.
 
 ## Interaction between Controller, Service, and Repository
 
